@@ -80,6 +80,8 @@
 		'Test-ScopeHijack'
 		'Test-ScopeHijackMQCN'
 		'Test-ScopeHijackCommand'
+		'Test-ScopeHijackAlias'
+		'Test-ScopeHijackSecure'
 	)
 	
 	# Cmdlets to export from this module

@@ -10,10 +10,24 @@
 	===========================================================================
 #>
 
-
+Function Import-SecureAlias {
+	New-Alias -Name Invoke-WebRequest -Value Microsoft.PowerShell.Utility\Invoke-WebRequest -Scope 1
+}
 
 function Test-ScopeHijack
 {
+	Invoke-WebRequest -Uri "https://google.com"
+}
+
+function Test-ScopeHijackSecure
+{
+	Import-SecureAlias
+	Invoke-WebRequest -Uri "https://google.com"
+}
+
+function Test-ScopeHijackAlias
+{
+	New-Alias -Name Invoke-WebRequest -Value Microsoft.PowerShell.Utility\Invoke-WebRequest -Scope local
 	Invoke-WebRequest -Uri "https://google.com"
 }
 

@@ -16,6 +16,16 @@ $Lines
 Test-ScopeHijack
 $Lines
 $newline
+"Test-ScopeHijackSecure"
+$Lines
+Test-ScopeHijackSecure
+$Lines
+$newline
+"Test-ScopeHijackAlias"
+$Lines
+Test-ScopeHijackAlias
+$Lines
+$newline
 "Test-ScopeHijackMQCN"
 $Lines
 Test-ScopeHijackMQCN
@@ -24,4 +34,15 @@ $newline
 "Test-ScopeHijackCommand | Format-List *"
 $Lines
 Test-ScopeHijackCommand | Format-List *
+$Lines
+$newline
+"Get-Command Invoke-WebRequest | Format-List *"
+$Lines
+Get-Command Invoke-WebRequest | Format-List *
+$Lines
+Remove-Module -Force $moduleName  -ErrorAction SilentlyContinue
+$newline
+"Get-Command Invoke-WebRequest | Format-List *"
+$Lines
+Get-Command Invoke-WebRequest | Format-List *
 $Lines
