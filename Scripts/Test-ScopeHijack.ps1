@@ -2,7 +2,7 @@ $projectRoot = Resolve-Path "$PSScriptRoot\.."
 $moduleRoot = Split-Path (Resolve-Path "$projectRoot\*\*.psd1")
 $moduleName = Split-Path $moduleRoot -Leaf
 Remove-Module -Force $moduleName  -ErrorAction SilentlyContinue
-Import-Module (Join-Path $moduleRoot "$moduleName.psd1") -force
+Import-Module (Join-Path $moduleRoot "$moduleName.psd1") -force -verbose
 
 Function Invoke-WebRequest {
     Write-Output "Hijacked!"
